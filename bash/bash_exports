@@ -1,0 +1,30 @@
+#!/bin/bash
+
+
+
+export PROJECTSDIR="$HOME/projects"
+export AGCDIR="$PROJECTSDIR/AGC"
+export HTVSDIR="$PROJECTSDIR/htvs"
+export DJANGOCHEMDIR="$HTVSDIR/djangochem"
+export NFFDIR="$PROJECTSDIR/NeuralForceField"
+export ADVATTACKDIR="$PROJECTSDIR/Atomistic-Adversarial-Attacks"
+export PERSONALPYTHONFILE="$PROJECTSDIR/personal_utils/"
+export PYTHONPATH=$HTVSDIR:$DJANGOCHEMDIR:$PROJECTSDIR:$NFFDIR:$ADVATTACKDIR:$PERSONALPYTHONFILE:$CLASSDIR:$PYTHONPATH
+
+# for easier transition of work in engaging and here
+export POOL=/home/atan14/mnt/storage
+
+# only for classes
+export CLASSDIR="$PROJECTSDIR/classes"
+export ESPRESSO_PSEUDO="$CLASSDIR/3320_AtomisticSimulation/qe_pseudo"
+export PWSCF_COMMAND=pw.x
+export LAMMPS_COMMAND=lmp_stable
+export LAMMPS_POTENTIALS="$CLASSDIR/3320_AtomisticSimulation/lab4/"
+
+# fzf exports
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND="rg --files --ignore-case -g '!*.log'"
+export FZF_DEFAULT_OPTS="-m --height 40% --layout=reverse --border --inline-info --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export FZF_COMPLETION_OPTS='--border --info=inline'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

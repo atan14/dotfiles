@@ -1,0 +1,26 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/.vim: vim
+    ~/.config/nvim: nvim
+    ~/.tmux: tmux
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+    ~/.bash_exports: bash/bash_exports
+    ~/.bash_aliases: bash/bash_aliases
+    ~/.bashrc: bash/bashrc
+    ~/.fzf: fzf
+    ~/.fzf.bash: bash/fzf.bash
+    ~/.ripgreprc: ripgreprc
+    ~/.rgignore: rgignore
+    ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
+
+- shell:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive

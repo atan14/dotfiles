@@ -1,0 +1,12 @@
+[user]
+	email = atan14@mit.edu
+	name = atan14
+[http]
+	sslBackend = openssl
+[alias]
+	st = status -sb
+	last = log -1 HEAD --stat
+	cm = commit -m
+	rv = remote -v
+	diffvim = difftool -t vimdiff -y
+	update = add --update
