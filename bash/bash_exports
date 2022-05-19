@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 export PROJECTSDIR="$HOME/projects"
 export AGCDIR="$PROJECTSDIR/AGC"
 export HTVSDIR="$PROJECTSDIR/htvs"
@@ -12,7 +10,11 @@ export PERSONALPYTHONFILE="$PROJECTSDIR/personal_utils/"
 export PYTHONPATH=$HTVSDIR:$DJANGOCHEMDIR:$PROJECTSDIR:$NFFDIR:$ADVATTACKDIR:$PERSONALPYTHONFILE:$CLASSDIR:$PYTHONPATH
 
 # for easier transition of work in engaging and here
-export POOL=/home/atan14/mnt/storage
+export MNT=/home/atan14/mnt
+export POOL=$MNT/storage
+export CLUSTER_INBOX=$MNT/cluster/jobs/inbox
+export CLUSTER_COMPLETED=$MNT/cluster/jobs/completed
+export CLUSTER_STORAGE=$POOL
 
 # only for classes
 export CLASSDIR="$PROJECTSDIR/classes"
