@@ -2301,7 +2301,7 @@ fun! s:apply_syntax_highlightings()
     hi! link CmpItemKindFolder CmpItemKindFile
     exec 'hi CmpItemAbbrMatch' . s:fg_blue . s:ft_bold
     exec 'hi CmpItemAbbrMatchFuzzy' . s:fg_blue . s:ft_bold
-    " exec 'hi CmpItemAbbrDeprecated' . s:fg_foreground . ' gui=strikethrough'
+    exec 'hi CmpItemAbbrDeprecated' . s:fg_foreground . ' gui=strikethrough'
   endif
 
 endfun
