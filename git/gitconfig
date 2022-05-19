@@ -10,3 +10,7 @@
 	rv = remote -v
 	diffvim = difftool -t vimdiff -y
 	update = add --update
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+	path = ~/.gitconfig_local
