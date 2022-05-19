@@ -13,3 +13,9 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+# create local files
+touch ~/.vimrc_local
+touch ~/.gitconfig_local
+touch ~/.tmux_local.conf
+touch ~/.bashrc_local
