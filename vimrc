@@ -63,6 +63,7 @@ nnoremap fi :set foldmethod=indent<CR>
 "---------------------
 let g:jedi#use_splits_not_buffers = "right"
 let g:jedi#popup_on_dot = 0
+execute pathogen#infect()
 
 "---------------------
 " Syntastic Plugin
