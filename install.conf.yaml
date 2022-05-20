@@ -15,6 +15,7 @@
     ~/.bash_exports: bash/bash_exports
     ~/.bash_aliases: bash/bash_aliases
     ~/.bashrc: bash/bashrc
+    ~/.bash_profile: bash/bash_profile
     ~/.fzf: fzf
     ~/.fzf.bash: bash/fzf.bash
     ~/.ripgreprc: ripgreprc
