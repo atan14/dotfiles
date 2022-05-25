@@ -119,9 +119,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-jupyter-nbextension enable nglview --py --sys-prefix
-
-
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
