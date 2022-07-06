@@ -20,14 +20,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-# git aliases and tools
-git config --global alias.st 'status -sb'
-git config --global alias.last 'log -1 HEAD --stat'
-git config --global alias.cm 'commit -m'
-git config --global alias.rv 'remote -v'
-git config --global alias.diffvim 'difftool -t vimdiff -y'
-git config --global alias.update 'add --update'
-
 # htvs aliases
 alias shellplus='$DJANGOCHEMDIR/manage.py shell_plus --settings=djangochem.settings.orgel'
 
