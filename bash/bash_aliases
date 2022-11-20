@@ -20,6 +20,10 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+pid() {
+    ps -p $1 -o pid,vsz=MEMORY -o user,group=GROUP -o comm,args=ARGS
+}
+
 # htvs aliases
 alias shellplus='$DJANGOCHEMDIR/manage.py shell_plus --settings=djangochem.settings.orgel'
 
