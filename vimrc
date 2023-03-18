@@ -17,6 +17,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim', { 'branch': 'main' }
+Plug 'dpayne/CodeGPT.nvim'
 
 call plug#end()
 
