@@ -24,5 +24,3 @@ export FZF_DEFAULT_OPTS="-m --height 40% --layout=reverse --border --inline-info
 export FZF_COMPLETION_OPTS='--border --info=inline'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-export OPENAI_API_KEY="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"
