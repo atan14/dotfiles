@@ -20,6 +20,15 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+function catf() {
+    for file in "$@"
+    do
+        echo "=== $file ==="
+        cat "$file"
+    done
+}
+
+
 pid() {
     ps -p $1 -o pid,vsz=MEMORY -o user,group=GROUP -o comm,args=ARGS
 }
