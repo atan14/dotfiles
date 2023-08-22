@@ -9,6 +9,7 @@
     ~/.bash_aliases: bash/bash_aliases
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
+    ~/.zshrc: zsh/zshrc
     ~/.vimrc: vimrc
     ~/.vim: vim
     ~/.config/nvim: nvim
@@ -17,7 +18,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
     ~/.fzf: fzf
-    ~/.fzf.bash: bash/fzf.bash
+    ~/.fzf.zsh: zsh/fzf.zsh
     ~/.ripgreprc: ripgreprc
     ~/.rgignore: rgignore
     ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
