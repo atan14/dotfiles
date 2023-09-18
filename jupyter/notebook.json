@@ -21,5 +21,10 @@
     "cm_config": {
       "lineWrapping": true
     }
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": false
+    }
   }
 }
