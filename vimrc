@@ -3,23 +3,19 @@ set nocompatible " not vi compatible
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
-Plug 'vim-syntastic/syntastic'
+Plug 'scrooloose/nerdtree'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sensible'
 Plug 'tmhedberg/SimpylFold'
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'psf/black', { 'branch': 'stable' }
-Plug 'nvim-lua/plenary.nvim'
-Plug 'MunifTanjim/nui.nvim', { 'branch': 'main' }
-Plug 'dpayne/CodeGPT.nvim'
+Plug 'dense-analysis/ale'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -64,34 +60,30 @@ nnoremap fi :set foldmethod=indent<CR>
 "---------------------
 " Jedi-VIM
 "---------------------
-let g:jedi#use_splits_not_buffers = "right"
-let g:jedi#popup_on_dot = 0
-execute pathogen#infect()
+" let g:jedi#use_splits_not_buffers = "right"
+" let g:jedi#popup_on_dot = 0
+" execute pathogen#infect()
 
 "---------------------
-" Syntastic Plugin
+" ALE syntax checker
 "---------------------
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set statusline+=%F
+let g:ale_linters = {'python': ['flake8', 'ruff']}
+let b:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['isort', 'ruff', 'black']}
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {'mode': 'passive'}
+let g:ale_python_executable='python3'
+let g:ale_python_ruff_use_global=1
 
-" see :h syntastic-loclist-callback
-function! SyntasticCheckHook(errors)
-    if !empty(a:errors)
-        let g:syntastic_loc_list_height = min([len(a:errors), 8])
-    endif
-endfunction
+" Disable whitespace warnings
+let g:ale_warn_about_trailing_whitespace = 0
 
-map <Leader>c :SyntasticCheck<CR>
-map <Leader>C :SyntasticReset<CR>
+" Fix files when saving them
+let g:ale_fix_on_save = 1
+
+let g:ale_sign_column_always = 1
+
+nmap <silent> <C-[> <Plug>(ale_previous_wrap)
+nmap <silent> <C-]> <Plug>(ale_next_wrap)
 
 "---------------------
 " Basic editing config
