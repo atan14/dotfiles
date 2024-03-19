@@ -189,6 +189,7 @@ endif
 " nerdtree
 filetype plugin indent on
 map <Leader>t :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=20
 
 " fzf
 set rtp+=~/.fzf
