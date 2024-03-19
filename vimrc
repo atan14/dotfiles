@@ -10,8 +10,9 @@ Plug 'danilo-augusto/vim-afterglow'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sensible'
 Plug 'tmhedberg/SimpylFold'
-" Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'dense-analysis/ale'
@@ -60,15 +61,15 @@ nnoremap fi :set foldmethod=indent<CR>
 "---------------------
 " Jedi-VIM
 "---------------------
-" let g:jedi#use_splits_not_buffers = "right"
-" let g:jedi#popup_on_dot = 0
-" execute pathogen#infect()
+let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#popup_on_dot = 0
+execute pathogen#infect()
 
 "---------------------
 " ALE syntax checker
 "---------------------
 
-let g:ale_linters = {'python': ['flake8', 'ruff']}
+let g:ale_linters = {'python': ['flake8', 'ruff', 'pyright']}
 let b:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['isort', 'ruff', 'black']}
 
 let g:ale_python_executable='python3'
@@ -82,8 +83,8 @@ let g:ale_fix_on_save = 1
 
 let g:ale_sign_column_always = 1
 
-nmap <silent> <C-[> <Plug>(ale_previous_wrap)
-nmap <silent> <C-]> <Plug>(ale_next_wrap)
+nmap <silent> <F5> <Plug>(ale_previous_wrap)
+nmap <silent> <F6> <Plug>(ale_next_wrap)
 
 "---------------------
 " Basic editing config
@@ -117,6 +118,8 @@ set smartcase
 " tab completion for files/bufferss
 set wildmode=longest,list,full
 set wildmenu
+" display full path in status line
+set statusline+=%F
 " set mouse+=a " enable mouse mode (scrolling, selection, etc)
 "if &term =~ '^screen'
 "    " tmux knows the extended mouse mode
@@ -137,8 +140,10 @@ imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 " flag extraneous whitespace
-highlight BadWhitespace ctermbg=red guibg=darkred
 au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+highlight BadWhitespace ctermbg=red guibg=darkred
+highlight ColorColumn ctermbg=black
+set colorcolumn=80
 
 "--------------------
 " Keybindings
