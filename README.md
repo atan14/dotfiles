@@ -11,3 +11,6 @@ Make local customizations for some programs by editing these files:
 - `git`: `~/gitconfig_local`
 - `tmux`: `~/.tmux_local.conf`
 - `bash`: `~/.bashrc_local`
+
+## Install Tmux Plugin Manager
+Do `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
