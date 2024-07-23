@@ -16,9 +16,17 @@ function cd() {
     builtin cd "${new_directory}" && ls -a
 }
 
+# Create aliases that go back as many dots as desired
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+alias ........="cd ../../../../../../.."
+alias .........="cd ../../../../../../../.."
+alias ..........="cd ../../../../../../../../.."
+
 
 function catf() {
     for file in "$@"
