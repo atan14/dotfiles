@@ -2,7 +2,7 @@
 	email = tanaikrui@hotmail.com
 	name = Aik Rui Tan
 [http]
-	sslBackend = openssl
+	sslBackend = gnutls
 [alias]
 	st = status -sb
 	last = log -1 HEAD --stat
