@@ -68,23 +68,31 @@ execute pathogen#infect()
 "---------------------
 " ALE syntax checker
 "---------------------
+let g:ale_linters = { "python": ["ruff"] }
+let g:ale_fixers = {
+\       "*": ["remove_trailing_lines", "trim_whitespace"],
+\       "python": ["isort", "black", "ruff"],
+\}
+let g:ale_fix_on_save = 0
 
-let g:ale_linters = {'python': ['flake8', 'ruff', 'pyright']}
-let b:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['isort', 'ruff', 'black']}
+nnoremap <Leader>k :ALEFix<CR>
 
-let g:ale_python_executable='python3'
-let g:ale_python_ruff_use_global=1
-
-" Disable whitespace warnings
-let g:ale_warn_about_trailing_whitespace = 0
-
-" Fix files when saving them
-let g:ale_fix_on_save = 1
-
-let g:ale_sign_column_always = 1
-
-nmap <silent> <F5> <Plug>(ale_previous_wrap)
-nmap <silent> <F6> <Plug>(ale_next_wrap)
+" let g:ale_linters = {'python': ['flake8', 'ruff', 'pyright']}
+" let b:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['isort', 'ruff', 'black']}
+"
+" let g:ale_python_executable='python3'
+" let g:ale_python_ruff_use_global=1
+"
+" " Disable whitespace warnings
+" let g:ale_warn_about_trailing_whitespace = 0
+"
+" " Fix files when saving them
+" let g:ale_fix_on_save = 1
+"
+" let g:ale_sign_column_always = 1
+"
+" nmap <silent> <F5> <Plug>(ale_previous_wrap)
+" nmap <silent> <F6> <Plug>(ale_next_wrap)
 
 "---------------------
 " Basic editing config
@@ -133,6 +141,9 @@ nmap <silent> <c-l> :wincmd l<CR>
 " Tab navigation
 nnoremap tn :tabn<CR>
 nnoremap tp :tabp<CR>
+" Set line numbering faster
+nnoremap nonum :set nonumber<CR>
+nnoremap num :set number<CR>
 " indent/unindent with tab/shift-tab
 nmap <Tab> >>
 nmap <S-tab> <<
@@ -198,4 +209,4 @@ map <Leader>b :Buffers<CR>
 map <Leader>g :GFiles<CR>
 
 " Black neovim
-nnoremap <Leader>k :Black<CR>
+" nnoremap <Leader>k :Black<CR>
