@@ -16,13 +16,21 @@ function cd() {
     builtin cd "${new_directory}" && ls -a
 }
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
 # vim commands
 alias vio='vi -o'
 alias vimdiff='vi -d'
+
+# Create aliases that go back as many dots as desired
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+alias ........="cd ../../../../../../.."
+alias .........="cd ../../../../../../../.."
+alias ..........="cd ../../../../../../../../.."
+
 
 function catf() {
     for file in "$@"
