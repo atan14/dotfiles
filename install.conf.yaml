@@ -10,8 +10,8 @@
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
     ~/.zshrc: zsh/zshrc
-    ~/.vimrc: vimrc
-    ~/.vim: vim
+    # ~/.vim: vim
+    # ~/.vim/.vimrc: vimrc
     ~/.config/nvim: nvim
     ~/.tmux.conf: tmux.conf
     ~/.tmux: tmux

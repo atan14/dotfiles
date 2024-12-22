@@ -16,9 +16,13 @@ function cd() {
     builtin cd "${new_directory}" && ls -a
 }
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# vim commands
+alias vio='vi -o'
+alias vimdiff='vi -d'
 
 function catf() {
     for file in "$@"
@@ -33,11 +37,6 @@ pid() {
     ps -p $1 -o pid,vsz=MEMORY -o user,group=GROUP -o comm,args=ARGS
 }
 
-# htvs aliases
-alias shellplus='$DJANGOCHEMDIR/manage.py shell_plus --settings=djangochem.settings.orgel'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias proj="cd $PROJECTSDIR"

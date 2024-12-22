@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export EDITOR="vim"
+
 export PROJECTSDIR="$HOME/projects"
 export AGCDIR="$PROJECTSDIR/AGC"
 export HTVSDIR="$PROJECTSDIR/htvs"
@@ -10,13 +11,6 @@ export EVIDIR="$PROJECTSDIR/evidential"
 export ADVATTACKDIR="$PROJECTSDIR/Atomistic-Adversarial-Attacks"
 export PERSONALPYTHONFILE="$PROJECTSDIR/personal_utils/"
 export PYTHONPATH=$HTVSDIR:$DJANGOCHEMDIR:$PROJECTSDIR:$NFFDIR:$ADVATTACKDIR:$EVIDIR:$PERSONALPYTHONFILE:$CLASSDIR:$PYTHONPATH
-
-# only for classes
-export CLASSDIR="$PROJECTSDIR/classes"
-export ESPRESSO_PSEUDO="$CLASSDIR/3320_AtomisticSimulation/qe_pseudo"
-export PWSCF_COMMAND=pw.x
-export LAMMPS_COMMAND=lmp_stable
-export LAMMPS_POTENTIALS="$CLASSDIR/3320_AtomisticSimulation/lab4/"
 
 # fzf exports
 export FZF_DEFAULT_COMMAND="rg --files --ignore-case -g '!*.log'"
