@@ -67,6 +67,17 @@ vim.keymap.set("n", "num", ":set number", { noremap = true, silent = true })
 
 -- Copy and paste to clipboard
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
-vim.keymap.set("", "<C-v>", '"+P', { noremap = true, silent = true })
+-- vim.keymap.set("", "<C-v>", '"+P', { noremap = true, silent = true })
+
+-- Sending deletes to d register
+vim.keymap.set("n", "d", '"dd', { noremap = true })
+vim.keymap.set("n", "D", '"dD', { noremap = true })
+vim.keymap.set("n", "dd", '"ddd', { noremap = true })
+vim.keymap.set("n", "x", '"_x', { noremap = true }) -- send char deletes to black hole
+vim.keymap.set("n", "dp", '"dp', { noremap = true }) -- paste what was deleted after cursor
+vim.keymap.set("n", "dP", '"dP', { noremap = true }) -- paste what was deleted before cursor
+
+vim.keymap.set("v", "d", '"dd', { noremap = true }) -- when visually selecting text and deleting
+vim.keymap.set("v", "D", '"dD', { noremap = true })
 
 -- vim: ts=2 sts=2 sw=2 et
