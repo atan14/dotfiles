@@ -79,7 +79,7 @@ return {
 
           -- Jump to definition but in a different tab
           map('gh', function()
-            vim.cmd('tab split')
+            vim.cmd 'tab split'
             require('telescope.builtin').lsp_definitions()
           end, '[G]oto [N]ew tab definition')
 
@@ -196,21 +196,39 @@ return {
         -- ts_ls = {},
         --
         ruff = {},
-        pyright = {
+        pylsp = {
           settings = {
             pylsp = {
-              -- Using Ruff's import organizer
               disableOrganizeImports = true,
+              plugins = {
+                pycodestyle = {
+                  enabled = false, -- Disable pycodestyle (PEP8) checks
+                  maxLineLength = 100,
+                },
+                pyflakes = {
+                  enabled = false, -- Disable pyflakes checks
+                },
+                mccabe = {
+                  enabled = true, -- Disable McCabe complexity checks
+                },
+                pylint = {
+                  enabled = false, -- Enable pylint checks
+                },
+              },
             },
-            python = {
-              analysis = {
-                -- Ignore all files for analysis to exclusively use Ruff for linting
-                ignore = { '*' },
+            pyright = {
+              settings = {
+                python = {
+                  analysis = {
+                    autoImportCompletions = true, -- Enable auto-import completions
+                    diagnosticMode = 'off', -- Disable diagnostics
+                    useLibraryCodeForTypes = true, -- Use library code for type information
+                  },
+                },
               },
             },
           },
         },
-
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -242,6 +260,7 @@ return {
         'stylua', -- Used to format Lua code
         'ruff',
         'pylsp',
+        'pyright',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
